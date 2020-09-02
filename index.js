@@ -1,5 +1,4 @@
 // // let rectangle = require("./rectangle");
-
 // // const calculateRec = (l, b) => {
 // //   if (l <= 0 || b <= 0) {
 // //     console.log(`${l} and ${b} must be a number greater than 0`);
@@ -73,3 +72,23 @@
 // //PIPING
 // // for reading inside a stream and copying into another file
 // readStream.pipe(writeStream);
+
+/*
+
+working with HTTP
+
+*/
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  console.log(req.url, req.method);
+  // set header
+  res.setHeader("Content-Type", "text/html");
+  res.write("<h1>Hello Ninja</h1>");
+  res.write("<p>It is a new begining</p>");
+  res.end();
+});
+
+server.listen(5000, "localhost", () => {
+  console.log("listening for request on port 5000");
+});
