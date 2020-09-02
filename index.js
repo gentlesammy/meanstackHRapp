@@ -1,75 +1,75 @@
-// let rectangle = require("./rectangle");
+// // let rectangle = require("./rectangle");
 
-// const calculateRec = (l, b) => {
-//   if (l <= 0 || b <= 0) {
-//     console.log(`${l} and ${b} must be a number greater than 0`);
-//   } else {
-//     console.log(
-//       `The perimeter of  ${l} and ${b} is  ${rectangle.perimeter(l, b)} `
-//     );
+// // const calculateRec = (l, b) => {
+// //   if (l <= 0 || b <= 0) {
+// //     console.log(`${l} and ${b} must be a number greater than 0`);
+// //   } else {
+// //     console.log(
+// //       `The perimeter of  ${l} and ${b} is  ${rectangle.perimeter(l, b)} `
+// //     );
 
-//     console.log(`The area of  ${l} and ${b} is  ${rectangle.area(l, b)} `);
-//     console.log("***************");
-//   }
-// };
+// //     console.log(`The area of  ${l} and ${b} is  ${rectangle.area(l, b)} `);
+// //     console.log("***************");
+// //   }
+// // };
 
-// calculateRec(2, 5);
-// calculateRec(24, 52);
-// calculateRec(0, 5);
+// // calculateRec(2, 5);
+// // calculateRec(24, 52);
+// // calculateRec(0, 5);
 
-// FILE OPERATION
-const fs = require("fs");
-// Read a file
-// const water = (name = "anonymous") => {
-//   fs.readFile("./docs/blog.txt", (err, data) => {
-//     if (err) {
-//       console.log(err);
-//     }
+// // FILE OPERATION
+// const fs = require("fs");
+// // Read a file
+// // const water = (name = "anonymous") => {
+// //   fs.readFile("./docs/blog.txt", (err, data) => {
+// //     if (err) {
+// //       console.log(err);
+// //     }
 
-//     console.log(data.toString(), name);
-//   });
-// };
-// water();
+// //     console.log(data.toString(), name);
+// //   });
+// // };
+// // water();
 
-// write into a file
-// const contentofFile = "Hello world";
-// fs.writeFile("./docs/new/blog.txt", contentofFile, () => {
-//   console.log("file written");
-// });
+// // write into a file
+// // const contentofFile = "Hello world";
+// // fs.writeFile("./docs/new/blog.txt", contentofFile, () => {
+// //   console.log("file written");
+// // });
 
-//Create folder and delete folder
-// if (!fs.existsSync("./docs/test")) {
-//   fs.mkdir("./docs/test", () => {
-//     console.log("folder created");
-//   });
-// } else {
-//   //delete a directory
-//   fs.rmdir("./docs/test", () => {
-//     console.log("folder removed");
-//   });
-// }
+// //Create folder and delete folder
+// // if (!fs.existsSync("./docs/test")) {
+// //   fs.mkdir("./docs/test", () => {
+// //     console.log("folder created");
+// //   });
+// // } else {
+// //   //delete a directory
+// //   fs.rmdir("./docs/test", () => {
+// //     console.log("folder removed");
+// //   });
+// // }
 
-//delete a file after checking if it exist
-// if (fs.existsSync("./rectangle.js")) {
-//   fs.unlinkSync("./docs/blogger.txt", (err) => {
-//     if (err) {
-//       console.log(err);
-//     }
-//     console.log("file deleted");
-//   });
-// }
+// //delete a file after checking if it exist
+// // if (fs.existsSync("./rectangle.js")) {
+// //   fs.unlinkSync("./docs/blogger.txt", (err) => {
+// //     if (err) {
+// //       console.log(err);
+// //     }
+// //     console.log("file deleted");
+// //   });
+// // }
 
-//stream lots of information. read from a big file and also write into pdf file
+// //stream lots of information. read from a big file and also write into pdf file
 
-const readStream = fs.createReadStream("./docs/huge.txt", { encoding: "utf8" });
-const writeStream = fs.createWriteStream("./docs/huge3.txt");
-// readStream.on("data", (chunk) => {
-//   console.log("#..... new Chunk ........###");
-//   console.log(chunk);
-//   writeStream.write("\n NEW CHUNK \n");
-//   writeStream.write(chunk);
-// });
+// const readStream = fs.createReadStream("./docs/huge.txt", { encoding: "utf8" });
+// const writeStream = fs.createWriteStream("./docs/huge3.txt");
+// // readStream.on("data", (chunk) => {
+// //   console.log("#..... new Chunk ........###");
+// //   console.log(chunk);
+// //   writeStream.write("\n NEW CHUNK \n");
+// //   writeStream.write(chunk);
+// // });
 
-//PIPING
-// for reading inside a stream and copying into another file
-readStream.pipe(writeStream);
+// //PIPING
+// // for reading inside a stream and copying into another file
+// readStream.pipe(writeStream);
