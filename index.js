@@ -1,13 +1,22 @@
 const express = require("express");
-const app = express();
+let mongoose = require("mongoose");
 let morgan = require("morgan");
+const app = express();
+
 app.set("view engine", "ejs");
 
-app.use(morgan("tiny"));
+// middleware and static files
+app.use(express.static("public"));
 
 const dbParam =
-  "mongodb+srv://gentlesammy:<password>@honestmen.7dcux.mongodb.net/<dbname>?retryWrites=true&w=majority";
+  "mongodb+srv://gentlesammy:KOKO1984billo1989@honestmen.7dcux.mongodb.net/Honestmen?retryWrites=true&w=majority";
 
+mongoose
+  .connect(dbParam, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((result) => app.listen(5000))
+  .catch((err) => {
+    console.log("error", err);
+  });
 //routes
 app.get("/", function (req, res) {
   // res.send("<h1>HomePage</h1>");
@@ -68,5 +77,3 @@ app.use((req, res) => {
   // res.sendFile("./views/404.html", { root: __dirname });
   res.status(404).render("404", { title: "404" });
 });
-
-app.listen(5000);
