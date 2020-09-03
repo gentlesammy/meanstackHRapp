@@ -20,7 +20,31 @@ app.get("/create", function (req, res) {
 
 app.get("/honestlist", function (req, res) {
   // res.send("<h1>HomePage</h1>");
-  res.render("honestlist", { title: "Honest List" });
+  const honestlist = [
+    {
+      fullname: "Sule dada",
+      date: "17/12/1989",
+      title: "He returns bag of beans",
+      details:
+        "This man found a bag of beans and returned it back to the market",
+    },
+    {
+      fullname: "Papa Ope",
+      date: "1/1/2020",
+      title: "She found a golden ring",
+      details:
+        "This lady found a golden ring on the road and took it to police station",
+    },
+
+    {
+      fullname: "Femi Black",
+      date: "17/12/1989",
+      title: "Found Lost Wallet",
+      details:
+        "This man found a wallet filled with money and returned it to the owner",
+    },
+  ];
+  res.render("honestlist", { title: "Honest List", honestlist });
 });
 
 // app.get("/about", function (req, res) {

@@ -46,10 +46,33 @@
         </div>
       </nav>
 
-      <div class="jumbotron">
-        <h1 class="display-3">Recent Honest List Submission</h1>
-        <p>The following report of honesty were submitted but have not been approve thus not added to our api</p>
+      <div class="container py-2 pt-4">
+        <div class="jumbotron">
+          <h3 class="">Recent Honest List Submission</h3>
+          <p>The following report of honesty were submitted but have not been approve thus not added to our api</p>
+        </div>
       </div>
-    
+      <div class="container">
+        <div class="row">
+          <% if(honestlist.length > 0){  %>
+            <% honestlist.forEach((list) =>{%>
+              <div class="col-md-4">
+                <div class="card text-white bg-primary mb-3">
+                  <div class="card-header"><%= list.title%></div>
+                  <div class="card-body">
+                    <h4 class="card-title"><%= list.fullname%></h4>
+                    <p class="card-text"><%= list.details%></p>
+                  </div>
+                </div>
+              </div>
+            <%  }) %>
+      <%} else{ %>
+          <h3>NO WAITING LIST,</h3>
+          <br>
+          <p>This means all last request has been added to our api. </p>
+      <%}%>
+        </div>
+      </div>
+     
 </body>
 </html>
