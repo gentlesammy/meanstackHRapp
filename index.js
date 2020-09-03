@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express();
+let morgan = require("morgan");
 app.set("view engine", "ejs");
+
+app.use(morgan("tiny"));
+
+const dbParam =
+  "mongodb+srv://gentlesammy:<password>@honestmen.7dcux.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 //routes
 app.get("/", function (req, res) {
