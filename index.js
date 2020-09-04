@@ -1,6 +1,7 @@
 const express = require("express");
 let mongoose = require("mongoose");
 let morgan = require("morgan");
+const HonestList = require("./models/honestlist");
 const app = express();
 
 app.set("view engine", "ejs");
@@ -21,6 +22,46 @@ mongoose
 app.get("/", function (req, res) {
   // res.send("<h1>HomePage</h1>");
   res.render("index", { title: "Welcome" });
+});
+
+//mongoose and mongodb sandbox routes
+app.get("/add-honest", (req, res) => {
+  const honestList = new HonestList({
+    fullName: "Samuel Odunlade",
+    date: new Date(),
+    title: "Returned an extra Plate of Jollof Rice",
+    details:
+      "The gentleman attended a party, he received food and ate it,  went out to ease himself, when he came back he saw another fried rice serve already, guess what? he returned it",
+  });
+
+  honestList
+    .save()
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.get("/all-list", (req, res) => {
+  HonestList.find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+app.get("/list-detail", (req, res) => {
+  HonestList.findById("5f51d4007aad9b30787d603b")
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 
 app.get("/about", function (req, res) {
