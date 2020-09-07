@@ -17,25 +17,25 @@
               <div class="col-md-6">
                   <h3>Honest Men Request Submission Form</h3>
                   <hr>
-                  <form action="" method="post"   class="p-2">
+                  <form action="/create" method="post"   class="p-2">
 
                     <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge">FullName</label>
-                        <input class="form-control form-control-lg" type="text" placeholder="FullName of the proposed Honest man" id="fullname">
+                        <input class="form-control form-control-lg" name="fullName" type="text" placeholder="FullName of the proposed Honest man" id="fullname" >
                       </div>
                       <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge">When did this event occured</label>
-                        <input class="form-control form-control-lg" type="date"  id="date">
+                        <input class="form-control form-control-lg" name="date" type="date"  id="date">
                       </div>
 
                       <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge">Caption The Event</label>
-                        <input class="form-control form-control-lg" type="text" placeholder="What title fit this event" id="title">
+                        <input class="form-control form-control-lg" type="text" name="title" placeholder="What title fit this event" id="title">
                       </div>
 
                       <div class="form-group">
                         <label for="exampleTextarea">Details of the Event</label>
-                        <textarea class="form-control" id="event" rows="3"></textarea>
+                        <textarea class="form-control" name="details" id="event" rows="3"></textarea>
                       </div>
                       
                       <button type="submit" class="btn btn-primary">Submit Request</button>

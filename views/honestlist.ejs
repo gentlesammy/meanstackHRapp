@@ -20,11 +20,13 @@
                 <div class="card text-white bg-primary mb-3">
                   <div class="card-header"><%= list.title%></div>
                   <div class="card-body">
-                    <h4 class="card-title"><%= list.fullname%></h4>
-                    <p class="card-text"><%= list.details%></p>
+                    <h4 class="card-title"><%= list.fullName %></h4>
+                    <p class="card-text"><%= list.details.slice(0, 60)%> ...</p>
+                    <a href="/honestlist/detail/<%= list.id%>" class="btn btn-secondary">Detail</a>
+                    <btn class="btn btn-danger "  data-id="<%= list.id %>" role="button" id="delete">Delete</btn>
                   </div>
                 </div>
-              </div>
+              </div>  
             <%  }) %>
       <%} else{ %>
           <h3>NO WAITING LIST,</h3>
